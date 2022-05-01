@@ -20,12 +20,12 @@ class _01_StringMethodsTest {
         assertEquals("x_x_x_x_x_x_x_underscores_x_x_x_x_x_x", _01_StringMethods.formatSpaces("x x x x x x x underscores x x x x x x"));
     }
 
-    @Test 
-    void testLineLeader() {
-        assertEquals("John A", _01_StringMethods.lineLeader("John C", "John B", "John A"));
-        assertEquals("John A", _01_StringMethods.lineLeader("           John A  ", " John C   ", "     John B "));
-        assertEquals("Charley F", _01_StringMethods.lineLeader("  Allison Z", " Charley F ", " Brad H "));
-    }
+   // @Test 
+//    void testLineLeader() {
+//        assertEquals("John A", _01_StringMethods.lineLeader("John C", "John B", "John A"));
+//        assertEquals("John A", _01_StringMethods.lineLeader("           John A  ", " John C   ", "     John B "));
+//        assertEquals("Charley F", _01_StringMethods.lineLeader("  Allison Z", " Charley F ", " Brad H "));
+//    }
 
     @Test
     void testNumeralSum() {

@@ -102,30 +102,49 @@ public class _01_StringMethods {
 	// Return the number of words in String s that end with String substring
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
+		String arr[] = s.split(" ");
 		int sum = 0;
-		int index = s.indexOf(substring);
-		while( index != -1 ) {
-			if(s.endsWith(substring)){
-					sum++;
-            
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i].endsWith(substring)) {
+				sum+=1;
 			}
-			index = s.indexOf(substring, index + substring.length());
-			}
-		return sum;
 		}
+		return sum;
+	}
 	
 
 	// Given String s, return the number of characters between the first
 	// occurrence of String substring and the final occurrence
 	// You can assume that substring will appear at least twice
 	public static int distance(String s, String substring) {
-		return 0;
-	}
+		int sum = 0;
+		sum = s.lastIndexOf(substring)-(s.indexOf(substring)+substring.length());
+		System.out.println(sum);
+		return sum;
+		}
+		
+	
 
 	// Return true if String s is a palindrome
 	// palindromes are words or phrases are read the same forward as backward.
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
+		s = s.replaceAll(" ", "");
+		s = s.replaceAll("\\.", "");
+		s = s.replaceAll(":", "");
+		s = s.replaceAll("\\?", "");
+		s = s.replaceAll("-", "");
+		s = s.replaceAll(",", "");
+		int t = s.length()-1;
+		int h = 0;
+		while(h<t) {
+			if(s.charAt(h) != s.charAt(t)) {
+				return false;
+			}
+			h+=1;
+			t-=1;
+		}
+		
 		return true;
 	}
 }
