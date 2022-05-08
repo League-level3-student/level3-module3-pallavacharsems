@@ -56,7 +56,26 @@ public class _01_StringMethods {
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
-		return null;
+		s1 = s1.trim();
+		s2 = s2.trim();
+		s3 = s3.trim();
+		String s1a [] = s1.split(" ");
+		String s2a [] = s2.split(" ");
+		String s3a [] = s3.split(" ");
+		if(s1a[1].compareTo(s2a[1]) <= -1 && s1a[1].compareTo(s3a[1]) <= -1) {
+			return s1;
+			
+		} else if(s2a[1].compareTo(s1a[1]) <= -1 && s2a[1].compareTo(s3a[1]) <= -1) {
+			return s2;
+			
+		} else {
+			return s3;
+		}
+			
+		
+
+		
+		
 	}
 
 	// Return the sum of all numerical digits in the String
@@ -138,7 +157,7 @@ public class _01_StringMethods {
 		int t = s.length()-1;
 		int h = 0;
 		while(h<t) {
-			if(s.charAt(h) != s.charAt(t)) {
+			if(Character.toLowerCase(s.charAt(h)) != Character.toLowerCase(s.charAt(t))) {
 				return false;
 			}
 			h+=1;
